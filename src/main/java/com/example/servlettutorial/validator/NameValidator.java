@@ -7,14 +7,15 @@ public class NameValidator implements Validator<String> {
 
     @Override
     public boolean validate(String name) {
-        final String regex = "^[A-Z][a-zA-Z ]*$";
 
         if (name == null) {
             log.atError().log("Name cannot be null.");
             throw new NullPointerException("Name cannot be null.");
         }
 
+        final String regex = "^[A-Z][a-zA-Z ]*$";
         final boolean validName = name.matches(regex);
+
         if (validName) {
             System.out.println("Name is valid");
         } else {
