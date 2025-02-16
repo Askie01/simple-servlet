@@ -20,10 +20,10 @@ public class PasswordComparator implements Comparator<String, String> {
 
         final boolean equalPasswords = firstPassword.equals(secondPassword);
         if (equalPasswords) {
-            System.out.println("Passwords are equal");
+            log.atDebug().log("Passwords are equal");
             return true;
         } else {
-            System.out.println("Passwords are not equal");
+            log.atDebug().log("Passwords are not equal");
             return false;
         }
     }
